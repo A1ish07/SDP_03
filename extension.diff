@@ -1,0 +1,34 @@
+diff --git a/src/AsciiRenderer.java b/src/AsciiRenderer.java
+new file mode 100644
+index 0000000..ea17f09
+--- /dev/null
++++ b/src/AsciiRenderer.java
+@@ -0,0 +1,12 @@
++public class AsciiRenderer implements Renderer {
++
++    @Override
++    public String renderCircle(int radius) {
++        return "ASCII circle radius=" + radius;
++    }
++
++    @Override
++    public String renderSquare(int side) {
++        return "ASCII square side=" + side;
++    }
++}
+\ No newline at end of file
+diff --git a/src/Main.java b/src/Main.java
+index b91db2b..4183157 100644
+--- a/src/Main.java
++++ b/src/Main.java
+@@ -21,6 +21,10 @@ public class Main {
+         checkCombination("T4", new Square("S1", 3, new RasterRenderer()),
+                 new RasterRenderer(), "RASTER square side=3");
+         checkRuntimeSwitch();
++        checkCombination("T6", new Circle("C1", 2, new AsciiRenderer()),
++                new AsciiRenderer(), "ASCII circle radius=2");
++        checkCombination("T7", new Square("S1", 3, new AsciiRenderer()),
++                new AsciiRenderer(), "ASCII square side=3");
+ 
+         System.out.println("SUMMARY: " + passed + "/" + total + " PASS");
+     }
