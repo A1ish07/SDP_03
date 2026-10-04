@@ -21,6 +21,10 @@ public class Main {
         checkCombination("T4", new Square("S1", 3, new RasterRenderer()),
                 new RasterRenderer(), "RASTER square side=3");
         checkRuntimeSwitch();
+        checkCombination("T6", new Circle("C1", 2, new AsciiRenderer()),
+                new AsciiRenderer(), "ASCII circle radius=2");
+        checkCombination("T7", new Square("S1", 3, new AsciiRenderer()),
+                new AsciiRenderer(), "ASCII square side=3");
 
         System.out.println("SUMMARY: " + passed + "/" + total + " PASS");
     }
